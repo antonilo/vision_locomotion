@@ -96,23 +96,40 @@
     <center>
         <p style="width:90%; text-align: justify; white-space: normal;"> 
         In this work, we show how to learn a visual
-walking policy that only uses an onboard RGB camera and
-proprioception to walk. Since simulating RGB is hard, we
-necessarily have to learn vision in the real world. We start with
-a blind walking policy trained in simulation. This policy can
-traverse some terrains in the real world but often struggles
-since it lacks knowledge of the upcoming geometry. This can
-be resolved with the use of vision. We train a visual module
-in the real world to predict the upcoming terrain with our
-proposed algorithm Cross Modal Supervision (CMS). CMS uses
-time-shifted proprioception to supervise vision and allows the
-policy to continually improve with more real-world experience.
-We evaluate our vision-based walking policy over a diverse set
-of terrains including stairs (up to 19cm high), slippery slopes
-(inclination of 35 degrees), curbs and tall steps (up to 20cm), and
-complex discrete terrains. We achieve this performance with
-less than 30 minutes of real-world data. </p>
+        walking policy that only uses an onboard RGB camera and
+        proprioception to walk. Since simulating RGB is hard, we
+        necessarily have to learn vision in the real world. We start with
+        a blind walking policy trained in simulation. This policy can
+        traverse some terrains in the real world but often struggles
+        since it lacks knowledge of the upcoming geometry. This can
+        be resolved with the use of vision. We train a visual module
+        in the real world to predict the upcoming terrain with our
+        proposed algorithm Cross Modal Supervision (CMS). CMS uses
+        time-shifted proprioception to supervise vision and allows the
+        policy to continually improve with more real-world experience.
+        We evaluate our vision-based walking policy over a diverse set
+        of terrains including stairs (up to 19cm high), slippery slopes
+        (inclination of 35 degrees), curbs and tall steps (up to 20cm), and
+        complex discrete terrains. We achieve this performance with
+        less than 30 minutes of real-world data. </p>
     </center>
+
+
+     <div class="row no-gutters">
+        <div class="row no-gutters">
+            <div class="col">
+            <center> Blind </center>
+                <video playsinline autoplay loop muted src="res/blind_side.mp4" width="97%"
+                       style="border-radius:10px; border:1px solid black"></video>
+            </div>
+            <div class="col">
+            <center> Vision </center>
+                <video playsinline autoplay loop muted src="res/vision_side.mp4" width="97%"
+                       style="border-radius:10px; border:1px solid black"></video>
+            </div>
+        </div>
+    </div>
+
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
