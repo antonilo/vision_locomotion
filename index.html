@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title> Learning Vision From Proprioception For Walking </title>
+    <title> Learning Visual Locomotion With Cross-Modal Supervision </title>
 
     <link href="res/css/bootstrap.min.css" rel="stylesheet">
 
@@ -89,6 +89,14 @@
     <center>
     <iframe width="70%" height="400" src="https://www.youtube.com/embed/Ty1T0_LRz6c" title="Learning to See" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </center>
+
+
+    <center>
+        <p style="width:90%; text-align: center; white-space: normal;"> 
+    <b>TL;DR: Learning to walk from pixels in the real world by using proprioception as supervision. </b>
+    </center>
+
+
     <!--------------------- abstract --------------------->
     <div class="gap-30"></div>
     <h2 style="text-align: center"> Abstract </h2>
@@ -196,6 +204,111 @@
                    style="border-radius:10px; border:1px solid black"></video>
         </div>
     </div>
+    <hr>
+
+
+    <h2 style="text-align: center"> Generalization Results: Trip to Stanford </h2>
+
+    <div class="gap-10"></div>
+    <center><p style="width:90%; text-align: justify; white-space: normal;">
+        After training our robot on a large set of terrains in the Berkeley campus, we verified generalization of the visual policy in the Stanford campus.
+    </p></center>
+
+    <div class="row no-gutters">
+        <div class="col">
+            <video controls playsinline autoplay loop muted src="res/stanford/library.mp4" width="97%"
+                   style="border-radius:10px; border:1px solid black"></video>
+        </div>
+        <div class="col">
+            <video controls playsinline autoplay loop muted src="res/stanford/walking_around_big.mp4" width="97%"
+                   style="border-radius:10px; border:1px solid black"></video>
+        </div>
+    </div>
+    <div class="row no-gutters">
+        <div class="col">
+            <video controls playsinline autoplay loop muted src="res/stanford/entrance.mp4" width="97%"
+                   style="border-radius:10px; border:1px solid black"></video>
+        </div>
+        <div class="col">
+            <video controls playsinline autoplay loop muted src="res/stanford/burgers_and_hall.mp4" width="97%"
+                   style="border-radius:10px; border:1px solid black"></video>
+        </div>
+    </div>
+
+
+    <hr>
+
+
+    <h2 style="text-align: center"> Visual Plasticity: The Prism-Adaptation Experiment </h2>
+
+    <div class="gap-10"></div>
+    <center><p style="width:90%; text-align: justify; white-space: normal;">
+      We study how quickly the policy can adapt to shifts in the visual field. To do so, we change the camera orientation. This results in a large variation in the field of view, as shown in the image below. Note that after rotation, the robot cannot see the terrain in front of it.
+    </p></center>
+
+    <center>
+		<img class="img-fluid" src="images/prism-expt_camera.png" style="margin-bottom: 30px" width="98%" alt=""><br>
+	</center>
+
+
+
+        <div class="gap-10"></div>
+    <center><p style="width:90%; text-align: justify; white-space: normal;">
+Before shifting the camera's visual field (pre-test), the policy can climb the testing staircase perfectly. However, after rotating the camera, the visual policy stumbles on stairs and drifts in the horizontal direction (exposure). After only three trials (approximately 80 seconds of data), the policy can again anticipate steps and walk without drifting (adaptation).
+    </p></center>
+
+
+    <div class="row no-gutters">
+        <div class="col-4">
+          <center> <b>Pre-Test</b></center>
+            <video controls playsinline autoplay loop muted src="res/prism/pre-test.mp4" width="97%"
+                   style="border-radius:10px; border:1px solid black"></video>
+        </div>
+        <div class="col-4">
+          <center> <b>Exposure</b></center>
+            <video controls playsinline autoplay loop muted src="res/prism/exposure.mp4" width="97%"
+                   style="border-radius:10px; border:1px solid black"></video>
+        </div>
+        <div class="col-4">
+          <center> <b>Adaptation</b></center>
+            <video controls playsinline autoplay loop muted src="res/prism/adaptation.mp4" width="97%"
+                   style="border-radius:10px; border:1px solid black"></video>
+        </div>
+    </div>
+
+
+        <div class="gap-10"></div>
+    <center><p style="width:90%; text-align: justify; white-space: normal;">
+      In the final session of the experiment (post-test), we switch back the camera to its original position. We observe that after training on only two trials, the policy can re-adapt to the original visual field.
+    </p></center>
+
+    <div class="row no-gutters">
+        <div class="col-4">
+          <center> <b>Post-Test: Trial I</b></center>
+            <video controls playsinline autoplay loop muted src="res/prism/post-test_initial.mp4" width="97%"
+                   style="border-radius:10px; border:1px solid black"></video>
+        </div>
+        <div class="col-4">
+          <center> <b>Post-Test: Trial II</b></center>
+            <video controls playsinline autoplay loop muted src="res/prism/post-test_after_one.mp4" width="97%"
+                   style="border-radius:10px; border:1px solid black"></video>
+        </div>
+        <div class="col-4">
+          <center> <b>Post-Test: Trial III</b></center>
+            <video controls playsinline autoplay loop muted src="res/prism/post-test_adapted.mp4" width="97%"
+                   style="border-radius:10px; border:1px solid black"></video>
+        </div>
+    </div>
+
+
+    	<hr>
+
+	<b><span style="font-size:22px">Acknowledgements:</span></b><br>
+
+This work was supported by the DARPA Machine Common Sense program and by the ONR MURI award N00014-21-1-2801. We would like to thank Sasha Sax for the helpful discussions, Noemi Aepli for support with media material, and Haozhi Qi for support with the website creation.
+
+	<p style="text-align: right"><a href="https://github.com/HaozhiQi/haozhiqi.github.io/tree/master/hora" style="font-size:12px;">Template for this Website</a></p>
+
 
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
