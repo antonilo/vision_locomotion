@@ -1,20 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title> Learning Visual Locomotion With Cross-Modal Supervision </title>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title> Learning Visual Locomotion with Cross-Modal Supervision</title>
+  <link href="res/css/bootstrap.min.css" rel="stylesheet">
+  <script src="res/js/fa.js"></script>
 
-    <link href="res/css/bootstrap.min.css" rel="stylesheet">
-
-    <style>
-      body {
-        font-family: Arial;
-        font-size:18px;
-        margin: 60px auto;
-        margin-top: 0px;
+	<style>
+      .header {
         width: auto;
+        max-width: auto;
+        padding-top: 4rem;
+        padding-bottom: 2rem;
+        margin-bottom: 2rem;
+        background-color: rgba(250, 250, 250)
       }
 
       a:link,a:visited
@@ -22,66 +22,80 @@
         color: #0071bc;
         text-decoration: none;
       }
+
       a:hover {
         color: #208799;
       }
 
       hr {
-        border: 0;
-        height: 2px;
+        border: 10;
+        height: 1px;
         background-image: linear-gradient(to right, rgba(0, 113, 188, 0.2), rgba(0, 0, 0, 0.1), rgba(0, 113, 188, 0.2));
       }
 
-      .gap-30 {
-      width:100%;
-      height:30px;
-      }
-
-      .gap-20 {
-      width:100%;
-      height:20px;
-      }
-
-      .gap-10 {
-      width:100%;
-      height:10px;
-      }
-
-      .gap-5 {
-      width:100%;
-      height:5px;
-      }
+      .gap-30 {height:30px;}
+      .gap-20 {height:20px;}
+      .gap-10 {height:10px;}
+      .gap-5 {height:5px;}
 
       .no-gutters {
       margin-right: 0;
       margin-left: 0;
-
-      > .col,
-      > [class*="col-"] {
-        padding-right: 0;
-        padding-left: 0;
-      }
-
-      .jumbotron {
-        margin-bottom: 0;
-      }
     }
 
-    </style>
+    .btn {
+      margin-left: 0.2rem;
+      margin-right: 0.2rem;
+		}
 
+
+	</style>
 </head>
 
-<div class="jumbotron">
-    <div class="container">
+<div class="header">
+	<div class="container">
+		<center><h1>Learning Visual Locomotion with Cross-Modal Supervision</h1></center>
+		<div class="gap-20"></div>
+		<!--------------------- Author Names --------------------->
+		<center>
+			<a href="https://antonilo.github.io/" target="_blank" style="font-size:20px">Antonio Loquercio</a><sup
+						style="font-size:14px">*</sup>,
+			<a href="https://ashish-kmr.github.io/" target="_blank" style="font-size:20px">Ashish Kumar</a><sup
+						style="font-size:14px">*</sup>,
+			<a href="https://people.eecs.berkeley.edu/~malik/" target="_blank" style="font-size:20px">Jitendra Malik</a><sup
+						style="font-size:14px"></sup>
+		</center>
 
-        <center><span style="font-size:42px"> Learning Visual Locomotion With Cross-Modal Supervision </span></center>
-        <div class="gap-20"></div>
+		<div class="gap-10"></div>
+		<center>
+			UC Berkeley
+		</center>
 
-        <!--------------------- Author Names --------------------->
-        <center>
-            Antonio Loquercio*, Ashish Kumar*, Jitendra Malik </br>
-        </center>
-    </div>
+		<div class="gap-20"></div>
+
+		<center>
+			<div class="btn-group" role="group">
+
+				<a href="">
+					<button type="button" class="btn btn-dark">
+						<span class="icon">
+              <i class="fas fa-file-pdf"></i> Paper
+            </span>
+					</button>
+				</a>
+
+				<a href="">
+					<button type="button" class="btn">
+						<span class="icon">
+              <i class="fab fa-github"></i> Code (Soon)
+            </span>
+					</button>
+				</a>
+
+			</div>
+		</center>
+
+	</div>
 </div>
 
 <div class="container">
@@ -103,23 +117,9 @@
     <div class="gap-10"></div>
     <center>
         <p style="width:90%; text-align: justify; white-space: normal;"> 
-        In this work, we show how to learn a visual
-        walking policy that only uses an onboard RGB camera and
-        proprioception to walk. Since simulating RGB is hard, we
-        necessarily have to learn vision in the real world. We start with
-        a blind walking policy trained in simulation. This policy can
-        traverse some terrains in the real world but often struggles
-        since it lacks knowledge of the upcoming geometry. This can
-        be resolved with the use of vision. We train a visual module
-        in the real world to predict the upcoming terrain with our
-        proposed algorithm Cross Modal Supervision (CMS). CMS uses
-        time-shifted proprioception to supervise vision and allows the
-        policy to continually improve with more real-world experience.
-        We evaluate our vision-based walking policy over a diverse set
-        of terrains including stairs (up to 19cm high), slippery slopes
-        (inclination of 35 degrees), curbs and tall steps (up to 20cm), and
-        complex discrete terrains. We achieve this performance with
-        less than 30 minutes of real-world data. </p>
+In this work, we show how to learn a visual walking policy that only uses a monocular RGB camera and proprioception to walk. Since simulating RGB is hard, we necessarily have to learn vision in the real world. We start with a blind walking policy trained in simulation. This policy can traverse some terrains in the real world but often struggles since it lacks knowledge of the upcoming geometry. This can be resolved with the use of vision. We train a visual module in the real world to predict the upcoming terrain with our proposed algorithm Cross-Modal Supervision (CMS). CMS uses time-shifted proprioception to supervise vision and allows the policy to continually improve with more real-world experience. 
+We evaluate our vision-based walking policy over a diverse set of terrains including stairs (up to 19cm high), slippery slopes (inclination of 35$^{\circ}$), curbs and tall steps (up to 20cm), and complex discrete terrains. We achieve this performance with less than 30 minutes of real-world data.
+Finally, we show that our policy can adapt to shifts in the visual field with a limited amount of real-world experience.</p>
     </center>
 
 
@@ -302,6 +302,18 @@ Before shifting the camera's visual field (pre-test), the policy can climb the t
 
 
     	<hr>
+
+      	<h2 style="text-align: center"> Bibtex </h2>
+	<pre style="background-color: #f4f4f4;">
+
+  @InProceedings{loquercio2022learn,
+   author={Loquercio, Antonio and Kumar, and Malik, Jitendra},
+   title={{Learning Visual Locomotion with Cross-Modal Supervision}},
+   booktitle={arxiv},
+   year={2022}
+  }
+  </pre>
+	<hr>
 
 	<b><span style="font-size:22px">Acknowledgements:</span></b><br>
 
