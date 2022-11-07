@@ -76,7 +76,7 @@
 		<center>
 			<div class="btn-group" role="group">
 
-				<a href="">
+				<a href="pdf/manuscript.pdf">
 					<button type="button" class="btn btn-dark">
 						<span class="icon">
               <i class="fas fa-file-pdf"></i> Paper
@@ -101,7 +101,7 @@
 <div class="container">
 
     <center>
-    <iframe width="70%" height="400" src="https://www.youtube.com/embed/Ty1T0_LRz6c" title="Learning to See" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <iframe width="70%" height="400" src="https://www.youtube.com/embed/d7I34YIdMdk" title="Learning to See" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </center>
 
 
@@ -118,125 +118,9 @@
     <center>
         <p style="width:90%; text-align: justify; white-space: normal;"> 
 In this work, we show how to learn a visual walking policy that only uses a monocular RGB camera and proprioception to walk. Since simulating RGB is hard, we necessarily have to learn vision in the real world. We start with a blind walking policy trained in simulation. This policy can traverse some terrains in the real world but often struggles since it lacks knowledge of the upcoming geometry. This can be resolved with the use of vision. We train a visual module in the real world to predict the upcoming terrain with our proposed algorithm Cross-Modal Supervision (CMS). CMS uses time-shifted proprioception to supervise vision and allows the policy to continually improve with more real-world experience. 
-We evaluate our vision-based walking policy over a diverse set of terrains including stairs (up to 19cm high), slippery slopes (inclination of 35$^{\circ}$), curbs and tall steps (up to 20cm), and complex discrete terrains. We achieve this performance with less than 30 minutes of real-world data.
+We evaluate our vision-based walking policy over a diverse set of terrains including stairs (up to 19cm high), slippery slopes (inclination of 35 degrees), curbs and tall steps (up to 20cm), and complex discrete terrains. We achieve this performance with less than 30 minutes of real-world data.
 Finally, we show that our policy can adapt to shifts in the visual field with a limited amount of real-world experience.</p>
     </center>
-
-
-    <hr>
-    <h2 style="text-align: center"> Qualitative Results </h2>
-
-    <div class="gap-10"></div>
-    <center><p style="width:90%; text-align: justify; white-space: normal;">
-        We show that our policy is better than the blind policy in several environments.
-    </p></center>
-
-
-    <div class="row no-gutters">
-        <div class="col">
-          <center> <b>Blind</b></center>
-            <video controls playsinline autoplay loop muted src="res/blind_side.mp4" width="97%"
-                   style="border-radius:10px; border:1px solid black"></video>
-        </div>
-        <div class="col">
-          <center> <b>Vision</b> </center>
-            <video controls playsinline autoplay loop muted src="res/vision_side.mp4" width="97%"
-                   style="border-radius:10px; border:1px solid black"></video>
-        </div>
-    </div>
-    <div class="row no-gutters">
-        <div class="col">
-            <video controls playsinline autoplay loop muted src="res/blind_indoor.mp4" width="97%"
-                   style="border-radius:10px; border:1px solid black"></video>
-        </div>
-        <div class="col">
-            <video controls playsinline autoplay loop muted src="res/vision_indoor.mp4" width="97%"
-                   style="border-radius:10px; border:1px solid black"></video>
-        </div>
-    </div>
-    <div class="row no-gutters">
-        <div class="col">
-            <video controls playsinline autoplay loop muted src="res/long_stairs_blind.mp4" width="97%"
-                   style="border-radius:10px; border:1px solid black"></video>
-        </div>
-        <div class="col">
-            <video controls playsinline autoplay loop muted src="res/long_stairs_vision.mp4" width="97%"
-                   style="border-radius:10px; border:1px solid black"></video>
-        </div>
-    </div>
-    <div class="row no-gutters">
-        <div class="col">
-            <video controls playsinline autoplay loop muted src="res/flat_blind.mp4" width="97%"
-                   style="border-radius:10px; border:1px solid black"></video>
-        </div>
-        <div class="col">
-            <video controls playsinline autoplay loop muted src="res/flat_vision.mp4" width="97%"
-                   style="border-radius:10px; border:1px solid black"></video>
-        </div>
-    </div>
-
-
-    <hr>
-    <h2 style="text-align: center"> Generalization Results </h2>
-
-    <div class="gap-10"></div>
-    <center><p style="width:90%; text-align: justify; white-space: normal;">
-        We show that our vision-based policy can walk on previously unseen terrains.
-    </p></center>
-
-    <div class="row no-gutters">
-        <div class="col">
-            <video controls playsinline autoplay loop muted src="res/gen_discrete.mp4" width="97%"
-                   style="border-radius:10px; border:1px solid black"></video>
-        </div>
-        <div class="col">
-            <video controls playsinline autoplay loop muted src="res/gen_construction.mp4" width="97%"
-                   style="border-radius:10px; border:1px solid black"></video>
-        </div>
-    </div>
-    <div class="row no-gutters">
-        <div class="col">
-            <video controls playsinline autoplay loop muted src="res/gen_upstairs.mp4" width="97%"
-                   style="border-radius:10px; border:1px solid black"></video>
-        </div>
-        <div class="col">
-            <video controls playsinline autoplay loop muted src="res/gen_discrete_2.mp4" width="97%"
-                   style="border-radius:10px; border:1px solid black"></video>
-        </div>
-    </div>
-    <hr>
-
-
-    <h2 style="text-align: center"> Generalization Results: Trip to Stanford </h2>
-
-    <div class="gap-10"></div>
-    <center><p style="width:90%; text-align: justify; white-space: normal;">
-        After training our robot on a large set of terrains in the Berkeley campus, we verified generalization of the visual policy in the Stanford campus.
-    </p></center>
-
-    <div class="row no-gutters">
-        <div class="col">
-            <video controls playsinline autoplay loop muted src="res/stanford/library.mp4" width="97%"
-                   style="border-radius:10px; border:1px solid black"></video>
-        </div>
-        <div class="col">
-            <video controls playsinline autoplay loop muted src="res/stanford/walking_around_big.mp4" width="97%"
-                   style="border-radius:10px; border:1px solid black"></video>
-        </div>
-    </div>
-    <div class="row no-gutters">
-        <div class="col">
-            <video controls playsinline autoplay loop muted src="res/stanford/entrance.mp4" width="97%"
-                   style="border-radius:10px; border:1px solid black"></video>
-        </div>
-        <div class="col">
-            <video controls playsinline autoplay loop muted src="res/stanford/burgers_and_hall.mp4" width="97%"
-                   style="border-radius:10px; border:1px solid black"></video>
-        </div>
-    </div>
-
-
-    <hr>
 
 
     <h2 style="text-align: center"> Visual Plasticity: The Prism-Adaptation Experiment </h2>
@@ -302,6 +186,124 @@ Before shifting the camera's visual field (pre-test), the policy can climb the t
 
 
     	<hr>
+    <h2 style="text-align: center"> Generalization Results </h2>
+
+    <div class="gap-10"></div>
+    <center><p style="width:90%; text-align: justify; white-space: normal;">
+        We show that our vision-based policy can walk on previously unseen terrains.
+    </p></center>
+
+    <div class="row no-gutters">
+        <div class="col">
+            <video controls playsinline autoplay loop muted src="res/gen_discrete.mp4" width="97%"
+                   style="border-radius:10px; border:1px solid black"></video>
+        </div>
+        <div class="col">
+            <video controls playsinline autoplay loop muted src="res/gen_construction.mp4" width="97%"
+                   style="border-radius:10px; border:1px solid black"></video>
+        </div>
+    </div>
+    <div class="row no-gutters">
+        <div class="col">
+            <video controls playsinline autoplay loop muted src="res/gen_upstairs.mp4" width="97%"
+                   style="border-radius:10px; border:1px solid black"></video>
+        </div>
+        <div class="col">
+            <video controls playsinline autoplay loop muted src="res/gen_discrete_2.mp4" width="97%"
+                   style="border-radius:10px; border:1px solid black"></video>
+        </div>
+    </div>
+    <hr>
+
+
+    <h2 style="text-align: center"> Generalization Results: Trip to Stanford </h2>
+
+    <div class="gap-10"></div>
+    <center><p style="width:90%; text-align: justify; white-space: normal;">
+        After training our robot on a large set of terrains in the Berkeley campus, we verified generalization of the visual policy in the Stanford campus.
+    </p></center>
+
+    <div class="row no-gutters">
+        <div class="col">
+            <video controls playsinline autoplay loop muted src="res/stanford/library.mp4" width="97%"
+                   style="border-radius:10px; border:1px solid black"></video>
+        </div>
+        <div class="col">
+            <video controls playsinline autoplay loop muted src="res/stanford/walking_around_big.mp4" width="97%"
+                   style="border-radius:10px; border:1px solid black"></video>
+        </div>
+    </div>
+    <div class="row no-gutters">
+        <div class="col">
+            <video controls playsinline autoplay loop muted src="res/stanford/entrance.mp4" width="97%"
+                   style="border-radius:10px; border:1px solid black"></video>
+        </div>
+        <div class="col">
+            <video controls playsinline autoplay loop muted src="res/stanford/burgers_and_hall.mp4" width="97%"
+                   style="border-radius:10px; border:1px solid black"></video>
+        </div>
+    </div>
+
+
+    <hr>
+
+
+    <hr>
+    <h2 style="text-align: center"> Blind vs Visual Locomotion </h2>
+
+    <div class="gap-10"></div>
+    <center><p style="width:90%; text-align: justify; white-space: normal;">
+        We show that our policy is better than the blind policy in several environments.
+    </p></center>
+
+
+    <div class="row no-gutters">
+        <div class="col">
+          <center> <b>Blind</b></center>
+            <video controls playsinline autoplay loop muted src="res/blind_side.mp4" width="97%"
+                   style="border-radius:10px; border:1px solid black"></video>
+        </div>
+        <div class="col">
+          <center> <b>Vision</b> </center>
+            <video controls playsinline autoplay loop muted src="res/vision_side.mp4" width="97%"
+                   style="border-radius:10px; border:1px solid black"></video>
+        </div>
+    </div>
+    <div class="row no-gutters">
+        <div class="col">
+            <video controls playsinline autoplay loop muted src="res/blind_indoor.mp4" width="97%"
+                   style="border-radius:10px; border:1px solid black"></video>
+        </div>
+        <div class="col">
+            <video controls playsinline autoplay loop muted src="res/vision_indoor.mp4" width="97%"
+                   style="border-radius:10px; border:1px solid black"></video>
+        </div>
+    </div>
+    <div class="row no-gutters">
+        <div class="col">
+            <video controls playsinline autoplay loop muted src="res/long_stairs_blind.mp4" width="97%"
+                   style="border-radius:10px; border:1px solid black"></video>
+        </div>
+        <div class="col">
+            <video controls playsinline autoplay loop muted src="res/long_stairs_vision.mp4" width="97%"
+                   style="border-radius:10px; border:1px solid black"></video>
+        </div>
+    </div>
+    <div class="row no-gutters">
+        <div class="col">
+            <video controls playsinline autoplay loop muted src="res/flat_blind.mp4" width="97%"
+                   style="border-radius:10px; border:1px solid black"></video>
+        </div>
+        <div class="col">
+            <video controls playsinline autoplay loop muted src="res/flat_vision.mp4" width="97%"
+                   style="border-radius:10px; border:1px solid black"></video>
+        </div>
+    </div>
+
+
+    <hr>
+
+
 
       	<h2 style="text-align: center"> Bibtex </h2>
 	<pre style="background-color: #f4f4f4;">
