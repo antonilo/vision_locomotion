@@ -57,8 +57,9 @@ You should now export Torch_DIR to be where libtorch is. To find the folder use 
 
 ```
 cd $CATKIN_WS/src
-git clone TODO
-vcs-import < TODO/dependencies.yaml
+git clone https://github.com/antonilo/vision_locomotion
+mv vision_locomotion agile_locomotion
+vcs-import < agile_locomotion/dependencies.yaml
 
 catkin build
 source CATKIN_WS/devel/setup.bash
@@ -67,7 +68,7 @@ source CATKIN_WS/devel/setup.bash
 
 #### Train a vision predictor
 
-We provide a pre-trained vision module, but the beauty of cross-modal supervision is that you can continuously train a model on the data that your robot collects. We added a small dummy dataset in the "data" folder. However, you should use the data collected from your robot (see section TODO for seeing how to do so) for training. You can either start from scratch or finetune the model we provide.
+We provide a pre-trained vision module, but the beauty of cross-modal supervision is that you can continuously train a model on the data that your robot collects. We added a small dummy dataset in the "data" folder. However, you should use the data collected from your robot (see [this section](https://github.com/antonilo/vision_locomotion#collecting-data-with-the-blind-policy) for seeing how to do so) for training. You can either start from scratch or finetune the model we provide.
 
 Please edit the file [train\_config.yaml](./visual_locomotion/learning/config/train_config.yaml) for adapting configs to your case. Configs name should be self-explanatory.
 
@@ -114,8 +115,9 @@ You should now export Torch_DIR to be where libtorch is. To find the folder use 
 
 ```
 cd $CATKIN_WS/src
-git clone TODO
-vcs-import < TODO/dependencies.yaml
+git clone https://github.com/antonilo/vision_locomotion
+mv vision_locomotion agile_locomotion
+vcs-import < agile_locomotion/dependencies.yaml
 
 catkin build
 source CATKIN_WS/devel/setup.bash
@@ -223,7 +225,7 @@ rostopic pub /agile_locomotion/walk std_msgs/Empty "{}" -1
 
 ## Policy Training
 
-In case you would like to train different control policies using reinforcement learning please follow the instructions from [this repository](todo). 
+In case you would like to train different control policies using reinforcement learning please follow the instructions from [this repository](https://github.com/antonilo/rl_locomotion). 
 
 
 ## Acknowledgements
