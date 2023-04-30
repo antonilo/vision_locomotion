@@ -1,4 +1,4 @@
-# Cross-Modal Supervision
+# Continual Learning for Locomotion with Cross-Modal Supervision
 
 This repo contains the code associated with the paper Learning Visual Locomotion with Cross-Modal Supervision.
 For more information, please check the [project webpage](https://antonilo.github.io/vision_locomotion/).
