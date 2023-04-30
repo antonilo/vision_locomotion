@@ -1,0 +1,21 @@
+general:
+  policy_id: "1200"
+  Kp: 46
+  Kd: 0.8
+  force_threshold: 25
+  tsteps: 50
+  init_steps: 0
+  hip_joint_angle: 0.45
+  lin_speed: 0.0 # m/s
+  max_lin_speed: 0.5 # m/s
+  ang_speed: 0.0 # rad/s
+  max_ang_speed: 0.4 # rad/s
+  latent_size: 10
+  obDim: 42
+  testing: false
+  log: false
+  log_images: false
+  log_prob_fall: false
+visual_pred:
+  n_g1: 1
+  using_vision: true

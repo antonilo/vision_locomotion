@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<launch>
+    <!-- RMA Controller -->
+    <node pkg="agile_locomotion" type="agile_locomotion" name="agile_locomotion" output="screen">
+        <rosparam file="$(find agile_locomotion)/parameters/default.yaml"/>
+        <param name="vision_path" value="$(find agile_locomotion)/models/vision"/>
+        <param name="base_path" value="$(find agile_locomotion)/models/blind"/>
+        <param name="data_dir" value="$(find agile_locomotion)/../data"/>
+    </node>
+</launch>

@@ -1,0 +1,27 @@
+name: "vision_predictor"
+general:
+  load_ckpt: False # if true, finetunes the model below
+  ckpt_file: "/path/to/model.pth"
+  tags: "Vision_Locomotion"
+  use_imgs: True # RGB
+  use_depth: False # Depth
+  frame_skip: 4 # for creating the history
+  lookhead: [0.8] # tuned for the speed of 0.5 m/s. Does not need to be precise, but you might want to change it for very different speeds.
+optimization:
+  lr: 0.005
+  lr_decay_epochs: "10000,2000" 
+  lr_decay_rate: 0.1
+  weight_decay: 5e-4
+  momentum: 0.9
+train:
+  train_dir: "/home/tony/PostDoc/Projects/Proprio-Walk/data/ablation_learning_speed/ours_st4/day_1/"
+  val_dir: "/home/tony/PostDoc/Projects/Proprio-Walk/data/ablation_learning_speed/ours_st4/day_1/"
+  test_dir: ""
+  batch_size: 32
+  save_path: "ckpts/" # folder it will save save
+  num_workers: 8
+  epochs: 80
+encoder:
+  history_len: 50 # proprioception history
+predictor:
+  pred_hid_sizes: [128,128,64,32]

@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<package format="2">
+    <name>visualoco_msgs</name>
+    <version>0.0.0</version>
+    <description>The visualoco_msgs package</description>
+
+    <maintainer email="loquercio@berkeley.edu">Antonio Loquercio</maintainer>
+    <license>MIT</license>
+
+    <author>Antonio Loquercio</author>
+
+    <buildtool_depend>catkin</buildtool_depend>
+    <buildtool_depend>catkin_simple</buildtool_depend>
+
+    <depend>geometry_msgs</depend>
+    <depend>message_generation</depend>
+    <depend>std_msgs</depend>
+
+</package>

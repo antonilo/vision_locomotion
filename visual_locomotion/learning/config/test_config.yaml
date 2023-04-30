@@ -1,0 +1,13 @@
+name: "test_node"
+general:
+  load_ckpt: True
+  ckpt_file: "../model/vision_model.pth"
+  tags: "None"
+  use_imgs: True
+  use_depth: False
+  frame_skip: 4
+  lookhead: [0.0] # only cardinality matters
+encoder:
+  history_len: 50 # proprioception history
+predictor:
+  pred_hid_sizes: [128,128,64,32]
