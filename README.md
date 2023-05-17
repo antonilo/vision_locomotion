@@ -227,6 +227,11 @@ rostopic pub /agile_locomotion/walk std_msgs/Empty "{}" -1
 
 In case you would like to train different control policies using reinforcement learning please follow the instructions from [this repository](https://github.com/antonilo/rl_locomotion). 
 
+## Trouble-shooting 
+If you encouter the following error "Lock memory failed", try two things. 
+First, before launching the code, run the **su** command to enter in superuser mode and then launch again the code.
+If this does not work check the sdk version that you're using. This project uses [version 3.3.1](https://github.com/unitreerobotics/unitree_legged_sdk/releases/tag/v3.3.1). If you are using another sdk, put the lib files in [this folder](https://github.com/antonilo/vision_locomotion/tree/master/controller/lib). Make sure to be able to launch examples with your sdk before using the code in this repository.
+Some users reported that when using an older version of the SDK (version 3.2), you need to comment out the ``` InitEnvironment()``` function from the code. 
 
 ## Acknowledgements
 
